@@ -43,11 +43,17 @@ int main(int argc, char *argv[])
     int A[size];
 
     for (int i = 0; i < size; i++)
-        fscanf(inPtr, "%d", &A[i]);
-
-    for (int i = 1; i < size; i++)
     {
-        fprintf(outPtr, "%d ", getGcd(A[i], A[i - 1]));
+        fscanf(inPtr, "%d", &A[i]);
+        printf("%d ", A[i]);
+    }
+
+    printf("\n");
+
+    for (int i = 0; i + 1 < size; i += 2)
+    {
+        fprintf(outPtr, "%d ", getGcd(A[i], A[i + 1]));
+        printf("%d %d\n", A[i], A[i + 1]);
     }
 
     fclose(inPtr);
