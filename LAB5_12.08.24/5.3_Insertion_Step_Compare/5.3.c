@@ -5,7 +5,6 @@
 
 long long comparisons = 0;
 
-// Function to perform insertion sort
 void insertionSort(int arr[], int n)
 {
     int i, key, j;
