@@ -13,10 +13,7 @@ void merge(int A[], int l, int mid, int r)
     while (i <= mid && j <= r)
     {
         comparisons++;
-        if (A[i] < A[j])
-            temp[k++] = A[i++];
-        else
-            temp[k++] = A[j++];
+        temp[k++] = A[i] < A[j] ? A[i++] : A[j++];
     }
 
     while (i <= mid)
@@ -26,7 +23,7 @@ void merge(int A[], int l, int mid, int r)
         temp[k++] = A[j++];
 
     for (int p = 0; p < k; p++)
-        A[l + p] = temp[p];
+        A[p + l] = temp[p];
 
     free(temp);
 }
@@ -38,7 +35,6 @@ void merge_sort(int A[], int l, int r)
         int mid = (l + r) / 2;
         merge_sort(A, l, mid);
         merge_sort(A, mid + 1, r);
-
         merge(A, l, mid, r);
     }
 }

@@ -16,16 +16,19 @@ int partition(int A[], int l, int r)
 {
     int pivot = A[r];
     int i = l - 1;
-    for (int j = l; j < r; j++)
+
+    for (int j = l; j <= r - 1; j++)
     {
-        comparisons++;
+        ++comparisons;
         if (A[j] <= pivot)
         {
+            // Bring the smaller element to the side of i
             i++;
             swap(&A[i], &A[j]);
         }
     }
     swap(&A[i + 1], &A[r]);
+
     return (i + 1);
 }
 

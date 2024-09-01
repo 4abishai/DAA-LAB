@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -13,14 +12,14 @@ void insertion_sort(int A[], int n)
         int key = A[j];
         int i = j - 1;
 
-        while (A[i] > key && i >= 0)
+        while (i > 0 && A[i] > key)
         {
-            comparisons++;
+            ++comparisons;
             A[i + 1] = A[i];
             i--;
         }
         A[i + 1] = key;
-        comparisons++;
+        ++comparisons;
     }
 }
 
