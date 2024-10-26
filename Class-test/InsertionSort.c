@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -12,7 +13,7 @@ void insertion_sort(int A[], int n)
         int key = A[j];
         int i = j - 1;
 
-        while (i > 0 && A[i] > key)
+        while (i >= 0 && A[i] > key)
         {
             ++comparisons;
             A[i + 1] = A[i];
@@ -41,7 +42,8 @@ int main()
 {
 
     // Read contents of file into array
-    FILE *fptr = fopen("unsorted.txt", "r");
+    // FILE *fptr = fopen("unsorted.txt", "r");
+    FILE *fptr = fopen("randRange.txt", "r");
     int inputs[MAX];
     int n = 0;
     while (fscanf(fptr, "%d", &inputs[n]) == 1 && n < MAX)
