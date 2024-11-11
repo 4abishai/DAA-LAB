@@ -7,11 +7,10 @@ long long comparisons = 0;
 
 void insertionSort(int arr[], int n)
 {
-    int i, key, j;
-    for (i = 1; i < n; i++)
+    for (int i = 1; i < n; i++)
     {
-        key = arr[i];
-        j = i - 1;
+        int key = arr[i];
+        int j = i - 1;
 
         // Move elements of arr[0..i-1] that are greater than key
         // to one position ahead of their current position
@@ -19,7 +18,7 @@ void insertionSort(int arr[], int n)
         {
             ++comparisons;
             arr[j + 1] = arr[j];
-            j = j - 1;
+            --j;
         }
         arr[j + 1] = key;
         if (j >= 0)

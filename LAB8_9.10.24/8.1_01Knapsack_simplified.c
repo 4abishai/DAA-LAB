@@ -6,7 +6,7 @@ int max(int a, int b)
     return (a > b) ? a : b;
 }
 
-int knapSack(int W, int wt[], int val[], int n)
+int knapSack(int wt[], int val[], int n, int W)
 {
     int dp[n + 1][W + 1];
 
@@ -33,6 +33,9 @@ int main()
     printf("Enter the number of items: ");
     scanf("%d", &n);
 
+    printf("Enter the capacity of the knapsack: ");
+    scanf("%d", &W);
+
     int val[n], wt[n];
 
     for (int i = 0; i < n; i++)
@@ -41,10 +44,7 @@ int main()
         scanf("%d %d", &val[i], &wt[i]);
     }
 
-    printf("Enter the capacity of the knapsack: ");
-    scanf("%d", &W);
-
-    int result = knapSack(W, wt, val, n);
+    int result = knapSack(wt, val, n, W);
     printf("Maximum value in knapsack of capacity %d is %d\n", W, result);
 
     return 0;
